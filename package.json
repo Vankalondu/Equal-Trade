@@ -1,0 +1,38 @@
+{
+  "name": "equal-trade",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "app/equal-buyer",
+    "app/equal-seller"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:next\" \"npm run dev:buyer\" \"npm run dev:seller\"",
+    "dev:next": "next dev --turbopack",
+    "dev:buyer": "npm --workspace=app/equal-buyer start",
+    "dev:seller": "npm --workspace=app/equal-seller start",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.8.2",
+    "next": "15.3.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.2",
+    "prisma": "^6.8.2",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

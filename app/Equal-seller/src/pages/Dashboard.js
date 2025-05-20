@@ -37,16 +37,14 @@ function Dashboard({ highContrastMode }) {
       {/* Welcome Section */}
       <div className={styles.welcomeSection}>
         <h1
-          className={`${styles.welcomeTitle} ${
-            highContrastMode ? styles.welcomeTitleHighContrast : ''
-          }`}
+          className={`${styles.welcomeTitle} ${highContrastMode ? styles.welcomeTitleHighContrast : ''
+            }`}
         >
           Welcome, John Doe
         </h1>
         <p
-          className={`${styles.welcomeText} ${
-            highContrastMode ? styles.welcomeTextHighContrast : ''
-          }`}
+          className={`${styles.welcomeText} ${highContrastMode ? styles.welcomeTextHighContrast : ''
+            }`}
         >
           Here's an overview of your store performance
         </p>
@@ -70,16 +68,14 @@ function Dashboard({ highContrastMode }) {
       <div className={styles.listingsSection}>
         <div className={styles.listingsHeader}>
           <h2
-            className={`${styles.listingsTitle} ${
-              highContrastMode ? styles.listingsTitleHighContrast : ''
-            }`}
+            className={`${styles.listingsTitle} ${highContrastMode ? styles.listingsTitleHighContrast : ''
+              }`}
           >
             Recent Listings
           </h2>
           <button
-            className={`${styles.viewAllButton} ${
-              highContrastMode ? styles.viewAllButtonHighContrast : ''
-            }`}
+            className={`${styles.viewAllButton} ${highContrastMode ? styles.viewAllButtonHighContrast : ''
+              }`}
             aria-label="View all recent listings"
           >
             View All
