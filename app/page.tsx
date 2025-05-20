@@ -58,7 +58,7 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="/Equal-buyer"
+                  href="http://localhost:3002/Equal-buyer"
                   className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
                 >
                   Shop as Buyer
@@ -78,7 +78,7 @@ export default function Home() {
                   </svg>
                 </a>
                 <a
-                  href="/Equal-seller"
+                  href="http://localhost:3001/Equal-seller"
                   className="inline-flex items-center justify-center px-6 py-3 bg-white text-blue-600 font-medium rounded-xl shadow-md border border-blue-100 hover:shadow-lg hover:border-blue-200 hover:-translate-y-0.5 transition-all duration-200"
                 >
                   Sell Products
@@ -414,7 +414,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
-              href="/Equal-buyer"
+              href="http://localhost:3002/Equal-buyer"
               className="inline-flex items-center justify-center px-6 py-3 bg-white text-blue-600 font-medium rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
             >
               Shop Now
@@ -434,7 +434,7 @@ export default function Home() {
               </svg>
             </a>
             <a
-              href="/Equal-seller"
+              href="http://localhost:3001/Equal-seller"
               className="inline-flex items-center justify-center px-6 py-3 bg-transparent text-white font-medium rounded-xl shadow-lg border-2 border-white/30 hover:bg-white/10 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
             >
               Start Selling
