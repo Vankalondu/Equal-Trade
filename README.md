@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+---
+## Monorepo Setup for Equal-Trade Project
 
-## Getting Started
+This repository contains a Next.js main project (`equal-trade`) with two React apps inside the `app/` folder:
 
-First, run the development server:
+- `equal-buyer` (React app running on port 3001)
+- `equal-seller` (React app running on port 3002)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Folder Structure
+
+```
+equal-trade/
+├── app/
+│   ├── equal-buyer/
+│   └── equal-seller/
+├── package.json (root)
+└── ...
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Dependency Management
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Root `package.json` uses **npm workspaces** to manage dependencies of all three projects.
+- Run `npm install` at the root once to install dependencies for Next.js and both React apps.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Running the Projects
 
-## Learn More
+- Run all three projects simultaneously with:
 
-To learn more about Next.js, take a look at the following resources:
+  ```bash
+  npm run dev
+  ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- This uses `concurrently` to start:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+  - Next.js app on `http://localhost:3000`
+  - Buyer React app on `http://localhost:3001`
+  - Seller React app on `http://localhost:3002`
 
-## Deploy on Vercel
+### Scripts Summary (root `package.json`)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```json
+"scripts": {
+  "dev": "concurrently \"npm run dev:next\" \"npm run dev:buyer\" \"npm run dev:seller\"",
+  "dev:next": "next dev --turbopack",
+  "dev:buyer": "npm --workspace=app/equal-buyer start",
+  "dev:seller": "npm --workspace=app/equal-seller start",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint"
+}
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+This setup simplifies development by centralizing commands and dependency installation for all three projects in one place.
+
+---
